@@ -25,10 +25,12 @@ aloh = Ka1*aloh2/h
 alo = Ka1*Ka2*aloh2/h^2
 
 # plot percentage of sites by type
-plot(ph, 100*aloh2/Caloh, type = "l", lty = 2, lwd = 2, ylab = "percentage of sites", xlab = "pH")
+plot(ph, 100*aloh2/Caloh, type = "l", lty = 2, lwd = 2, 
+     ylab = "percentage of sites", xlab = "pH")
 lines(ph, 100*aloh/Caloh, lty = 3, lwd = 2)
 lines(ph, 100*alo/Caloh, lty = 4, lwd = 2)
-legend(x = "left", legend = c("AlOH2+", "AlOH", "AlO-"), lty = c(2, 3, 4), lwd = c(2, 2, 2), bty = "n")
+legend(x = "left", legend = c("AlOH2+", "AlOH", "AlO-"), 
+       lty = c(2, 3, 4), lwd = c(2, 2, 2), bty = "n")
 
 ####################################################
 # Part II: Complexation of Lead With Surface Sites #
@@ -45,7 +47,8 @@ pb = Cpb/(1 + Kpb*alo)
 alopb = Kpb*alo*pb
 
 # plot percentages of lead absorbed and of surface sites
-plot(ph, 100*alopb/Cpb, type = "l", lty = 1, lwd = 2, xlim = c(0, 14), ylab = "percentage Pb absorbed or of surface sites")
+plot(ph, 100*alopb/Cpb, type = "l", lty = 1, lwd = 2, 
+     xlim = c(0, 14), ylab = "percentage Pb absorbed or of surface sites")
 lines(ph, 100*aloh2/Caloh, col = "lightgray")
 lines(ph, 100*aloh/Caloh, col = "lightgray")
 lines(ph, 100*alo/Caloh, col = "lightgray")
@@ -69,11 +72,15 @@ for (i in 1:5) {
   pb = Cpb/(1 + Kpb*alo)
   alopb = Kpb*alo*pb
   if (i == 1) {
-    plot(ph, 100*alopb/Cpb, type = "l", xlim = c(4,8), lwd = 2, ylab = "percentage of Pb absorbed or of surface sites", xlab = "pH")
+    plot(ph, 100*alopb/Cpb, type = "l", xlim = c(4,8), lwd = 2, 
+         ylab = "percentage of Pb absorbed or of surface sites", 
+         xlab = "pH")
   } else {
     lines(ph, 100*alopb/Cpb, lty = i, lwd = 2)
   }
-  legend(x = "bottomright", legend = c("1e-4", "3e-4", "5e-4", "7e-4", "1e-3"), lty = c(1, 2, 3, 4, 5), lwd = 2, bty = "n")
+  legend(x = "bottomright", legend = c("1e-4", "3e-4", "5e-4", 
+                                       "7e-4", "1e-3"), 
+         lty = c(1, 2, 3, 4, 5), lwd = 2, bty = "n")
   lines(ph, 100*aloh2/Caloh, col = "lightgray")
   lines(ph, 100*aloh/Caloh, col = "lightgray")
   lines(ph, 100*alo/Caloh, col = "lightgray")

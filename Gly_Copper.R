@@ -19,12 +19,14 @@ HG = H3O*G/Ka2
 H2G = H3O^2*G/(Ka1*Ka2)
 
 # plot distribution diagram
-plot(pH, H2G, type = "l", lty = 2, xlab = "pH", ylab = "concentration")
+plot(pH, H2G, type = "l", lty = 2, xlab = "pH", 
+     ylab = "concentration")
 lines(pH, HG, lty = 3)
 lines(pH, G, lty = 4)
 
 # plot log distribution diagram
-plot(pH, log10(H2G), type = "l", lty = 2, xlab = "pH", ylab = "log(concentration)")
+plot(pH, log10(H2G), type = "l", lty = 2, xlab = "pH", 
+     ylab = "log(concentration)")
 lines(pH, log10(HG), lty = 3)
 lines(pH, log10(G), lty = 4)
 
@@ -38,14 +40,14 @@ K2 = 9.33e6
 # Cgly = 1.00e-2
 Ccu = 1.00e-4
 
-
 # concentration of new species
 Cu = Ccu/(1 + K1*G + K1*K2*G^2)
 CuG = K1*Cu*G
 CuG2 = K2*CuG*G
 
 # plot log distribution diagram
-plot(pH, log10(H2G), type = "l", lty = 1, xlab = "pH", ylab = "log(concentration)", col = "lightgray")
+plot(pH, log10(H2G), type = "l", lty = 1, xlab = "pH", 
+     ylab = "log(concentration)", col = "lightgray")
 lines(pH, log10(HG), lty = 1, col = "lightgray")
 lines(pH, log10(G), lty = 1, col = "lightgray")
 lines(pH, log10(Cu), lty = 2, lwd = 2)
@@ -65,7 +67,8 @@ CuG2 = K2*CuG*G
 CuOH = K1.oh*Cu*OH
 
 # plot results
-plot(pH, log10(H2G), type = "l", lty = 1, xlab = "pH", ylab = "log(concentration)", col = "lightgray")
+plot(pH, log10(H2G), type = "l", lty = 1, xlab = "pH", 
+     ylab = "log(concentration)", col = "lightgray")
 lines(pH, log10(HG), lty = 1, col = "lightgray")
 lines(pH, log10(G), lty = 1, col = "lightgray")
 lines(pH, log10(Cu), lty = 2, lwd = 2)
